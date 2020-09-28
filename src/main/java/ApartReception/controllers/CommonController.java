@@ -10,4 +10,9 @@ public class CommonController {
     public String main(){
         return "main";
     }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String defaultRedirect(){
+        return "redirect:/main";
+    }
 }

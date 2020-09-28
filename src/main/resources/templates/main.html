@@ -8,19 +8,9 @@
 <body>
 <!--
 
-<div id="logo"></a>
-    <a href="/main" id="logo"><img src="logo.png" alt="logo"></a>
-</div>
+<div th:replace="templates.html :: logo"></div>
+<div th:replace="templates.html :: userMenu"></div>
 
-<div id="user-menu">
-    <th:block th:if="${!isLogged}">
-        <a href="/login" id="login-button"></a>
-    </th:block>
-    <th:block th:if="${isLogged}">
-        <a href="/logout" id="login-button"></a>
-    </th:block>
-
-</div>
 
 &lt;!&ndash;<div id="finder">
 <form method="POST" action="/find">

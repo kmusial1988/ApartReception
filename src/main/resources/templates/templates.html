@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="logo" th:fragment="logo">
+    <!--<a href="/main" id="logo"><img src="logo.png" alt="logo"></a>-->
+</div>
+
+<div id="menu" th:fragment="allApartMenu">
+
+    <a href="/busyApartments" id="busyApartments">Zajęte Apartamenty</a>
+    <a href="/freeApartments" id="freeApartments">Wolne Apartamenty</a>
+    <a href="/addApartments" id="addApartments">Dodaj Apartament</a>
+    <a href="/main" id="main">Powrót!!!</a>
+</div>
+
+<div id="user-menu" th:fragment="userMenu">
+    <th:block th:if="${!isLogged}">
+        <a href="/login" id="login-button"></a>
+    </th:block>
+    <th:block th:if="${isLogged}">
+        <a href="/logout" id="login-button"></a>
+    </th:block>
+</div>
+
+<div id="finderGuest" th:fragment="finderGuest">
+    <form method="POST" action="/find">
+        <input type="text" placeholder="Szukaj">
+        <input type="submit" value="Szukaj">
+    </form>
+</div>
+
+<div id="finderApart" th:fragment="finderApart">
+    <form method="POST" action="/find">
+        <input type="text" placeholder="Szukaj">
+        <input type="submit" value="Szukaj">
+    </form>
+</div>
+
+
+</body>
+</html>

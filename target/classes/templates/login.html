@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="/login.css">
 </head>
 <body>
-<a href="/main" id="logo"></a>
 <form id="login-form" method="POST" th:object="${user}">
     <input type="text" placeholder="login" th:field="*{login}"><br/>
     <input type="password" placeholder="hasło" th:field="*{password}"><br/>

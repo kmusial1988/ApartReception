@@ -4,6 +4,7 @@ import ApartReception.DAO.IUserDAO;
 import ApartReception.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,22 @@ public class UserDAO implements IUserDAO {
             return user;
         } catch (NoResultException e) {
             return null;
+        }
+    }
+    @Override
+    public void addUser(User user) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            session.save(user);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
         }
     }
 }
