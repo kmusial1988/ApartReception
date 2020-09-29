@@ -18,12 +18,12 @@
 </div>
 
 <div id="user-menu" th:fragment="userMenu">
-    <th:block th:if="${!isLogged}">
-        <a href="/login" id="login-button"></a>
-    </th:block>
-    <th:block th:if="${isLogged}">
+    <!--<th:block th:if="${!isLogged}">-->
+        <a href="/login" id="logout-button"></a>
+   <!-- </th:block>
+    <th:block th:if="${isLogged}">-->
         <a href="/logout" id="login-button"></a>
-    </th:block>
+ <!--   </th:block>-->
 </div>
 
 <div id="finderGuest" th:fragment="finderGuest">
