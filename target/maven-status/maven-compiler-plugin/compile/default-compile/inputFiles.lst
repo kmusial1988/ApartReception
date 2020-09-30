@@ -1,6 +1,7 @@
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/service/IUserService.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/session/SessionObject.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/controllers/UserController.java
+/home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/controllers/ApartmentController.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/controllers/CommonController.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/DAO/IApartmentDAO.java
 /home/kamil/Moje pliki/Java/Zadanie domowe/ApartReception/src/main/java/ApartReception/model/Apartment.java

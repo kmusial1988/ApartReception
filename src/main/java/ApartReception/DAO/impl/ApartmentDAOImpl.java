@@ -8,6 +8,9 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.management.Query;
+import java.util.List;
+
 @Repository
 public class ApartmentDAOImpl implements IApartmentDAO {
 
@@ -30,5 +33,15 @@ public class ApartmentDAOImpl implements IApartmentDAO {
             session.close();
         }
 
+    }
+
+    @Override
+    public List<Apartment> getAllApart() {
+        Session session = this.sessionFactory.openSession();
+        org.hibernate.query.Query<Apartment> query = session
+                .createQuery("FROM ApartReception.model.Apartment");
+        List<Apartment> result = query.getResultList();
+        session.close();
+        return result;
     }
 }

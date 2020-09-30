@@ -19,7 +19,7 @@
     </th:block>
 </div>
 
-<div id="finderGuest" th:fragment="finderGuest">
+<div id="finder" th:fragment="finderGuest">
     <form method="POST" action="/find">
         <input type="text" placeholder="GuestStatus">
         <input type="text" placeholder="Name">
@@ -29,7 +29,7 @@
     </form>
 </div>
 
-<div id="finderApart" th:fragment="finderApart">
+<div id="finder" th:fragment="finderApart">
     <form method="POST" action="/find">
         <input type="text" placeholder="readyToRent">
         <input type="text" placeholder="number">
@@ -37,6 +37,7 @@
         <input type="text" placeholder="bedCount">
         <input type="text" placeholder="roomCount">
         <input type="text" placeholder="address">
+        <input type="submit" value="Szukaj">
     </form>
 </div>
 

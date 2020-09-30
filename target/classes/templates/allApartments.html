@@ -5,25 +5,50 @@
     <title>Apartamenty-Krakowskie</title>
     <link rel="stylesheet" type="text/css" href="/allApartments.css">
 </head>
-<body>
+<body style="background-color: #e6e8e7;">
 
 
 <div th:replace="templates.html :: logo"></div>
 <div th:replace="templates.html :: userMenu"></div>
+<div th:replace="templates.html :: finderApart"></div>
+<div th:replace="templates.html :: menuAllApart"></div>
 
-<div id="menu">
-
-    <a href="/allApartments" id="allApartments">Apartamenty</a>
-
-    <a href="/listGuest" id="listGuest">Gości</a>
-
-    <a href="/invoice" id="invoice">Wystaw Fakture</a>
-
-</div>
 
 <div id="content">
+    <th:block th:each="currentApartments : ${apartments}">
 
-    <a>!!!!!!!!!!!!!!!!!!!!!!!!11Opis aparta!!!!!!!!!!!!!!!!!!!!!!!!!</a>
+            <div class="apartment">
+                <div class="readyToRent">
+                    <div class="label">Ready to Rent :</div>
+                    <div class="value" th:text="${currentApartments.readyToRent}"></div>
+                </div>
+                <div class="number">
+                    <div class="label">Number :</div>
+                    <div class="value" th:text="${currentApartments.number}"></div>
+                </div>
+                <div class="priceForDay">
+                    <div class="label">Price for day :</div>
+                    <div class="value" th:text="${currentApartments.priceForDay}"></div>
+                </div>
+                <div class="bedCount">
+                    <div class="label">Bed count :</div>
+                    <div class="value" th:text="${currentApartments.bedCount}"></div>
+                </div>
+                <div class="roomCount">
+                    <div class="label">Rooms count :</div>
+                    <div class="value" th:text="${currentApartments.roomCount}"></div>
+                </div>
+                <div class="address">
+                    <div class="label">Address :</div>
+                    <div class="value">
+                    <div class="address-streets" th:text="${currentApartments.address.streets}"></div>
+                    <div class="address-number" th:text="${currentApartments.address.number}"></div>
+                    <div class="address-city" th:text="${currentApartments.address.city}"></div>
+                    </div>
+                </div>
+            </div>
+    </th:block>
+
 
 </div>
 

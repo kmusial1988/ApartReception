@@ -5,6 +5,7 @@ ApartReception/model/Guest.class
 ApartReception/model/User.class
 ApartReception/DAO/IUserDAO.class
 ApartReception/model/Apartment.class
+ApartReception/controllers/ApartmentController.class
 ApartReception/controllers/AdminController.class
 ApartReception/controllers/AuthenticationControllers.class
 ApartReception/DAO/impl/UserDAO.class

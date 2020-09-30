@@ -6,6 +6,8 @@ import ApartReception.service.IApartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ApartmentService implements IApartmentService {
 
@@ -17,5 +19,10 @@ public class ApartmentService implements IApartmentService {
     {
         this.apartmentDAO.addApartment(apartment);
 
+    }
+
+    @Override
+    public List<Apartment> getAllApart() {
+        return this.apartmentDAO.getAllApart();
     }
 }
