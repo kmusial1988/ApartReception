@@ -12,7 +12,7 @@ public class Apartment {
     @Column(nullable = false, unique = true)
     private String  number;
     @Column(nullable = false )
-    private String priceForDay;
+    private Integer priceForDay;
     @Column(nullable = false)
     private String bedCount;
     @Column(nullable = false)
@@ -20,7 +20,7 @@ public class Apartment {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
     @Column(nullable = false)
-    private String freeData;
+    /*private String freeData;*/
 
     public int getId() {
         return id;
@@ -46,11 +46,11 @@ public class Apartment {
         this.number = number;
     }
 
-    public String getPriceForDay() {
+    public Integer getPriceForDay() {
         return priceForDay;
     }
 
-    public void setPriceForDay(String priceForDay) {
+    public void setPriceForDay(Integer priceForDay) {
         this.priceForDay = priceForDay;
     }
 
@@ -78,13 +78,13 @@ public class Apartment {
         this.address = address;
     }
 
-    public String getFreeData() {
+    /*public String getFreeData() {
         return freeData;
     }
 
     public void setFreeData(String freeData) {
         this.freeData = freeData;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -96,7 +96,7 @@ public class Apartment {
                 ", bedCount='" + bedCount + '\'' +
                 ", roomCount='" + roomCount + '\'' +
                 ", address=" + address +
-                ", freeData='" + freeData + '\'' +
+               /* ", freeData='" + freeData + '\'' +*/
                 '}';
     }
 
