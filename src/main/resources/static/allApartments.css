@@ -49,11 +49,19 @@
     background-color: #d6d6c2;
 }
 
-#finder form {
+#finderGuest form {
     width: 100%;
     text-align: center;
 }
-#finder form input{
+#finderGuest form input{
+    text-align: center;
+}
+
+#finderApart form {
+    width: 100%;
+    text-align: center;
+}
+#finderApart form input{
     text-align: center;
 }
 

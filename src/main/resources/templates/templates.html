@@ -9,7 +9,38 @@
     <!--<a href="/main" id="logo"><img src="logo.png" alt="logo"></a>-->
 </div>
 
-<div id="menu" th:fragment="allApartMenu">
+
+<div id="user-menu" th:fragment="userMenu">
+    <th:block th:if="${!isLogged}">
+        <a href="/login" id="login-button"></a>
+    </th:block>
+    <th:block th:if="${isLogged}">
+        <a href="/logout" id="logout-button" ></a>
+    </th:block>
+</div>
+
+<div id="finderGuest" th:fragment="finderGuest">
+    <form method="POST" action="/find">
+        <input type="text" placeholder="GuestStatus">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Surname">
+        <input type="text" placeholder="passportNumber">
+        <input type="submit" value="Szukaj">
+    </form>
+</div>
+
+<div id="finderApart" th:fragment="finderApart">
+    <form method="POST" action="/find">
+        <input type="text" placeholder="readyToRent">
+        <input type="text" placeholder="number">
+        <input type="text" placeholder="priceForDay">
+        <input type="text" placeholder="bedCount">
+        <input type="text" placeholder="roomCount">
+        <input type="text" placeholder="address">
+    </form>
+</div>
+
+<div id="menu" th:fragment="menuAllApart">
 
     <a href="/busyApartments" id="busyApartments">Zajęte Apartamenty</a>
     <a href="/freeApartments" id="freeApartments">Wolne Apartamenty</a>
@@ -17,28 +48,23 @@
     <a href="/main" id="main">Powrót!!!</a>
 </div>
 
-<div id="user-menu" th:fragment="userMenu">
-    <!--<th:block th:if="${!isLogged}">-->
-        <a href="/login" id="logout-button"></a>
-   <!-- </th:block>
-    <th:block th:if="${isLogged}">-->
-        <a href="/logout" id="login-button"></a>
- <!--   </th:block>-->
+<div id="menu" th:fragment="menuAllGuest">
+
+    <a href="/registerGuest" id="registerGuest">Dodaj Gości</a>
+    <a href="/guestWaitToRegister" id="guestWaitToRegister">Goście czekający na Meldunek</a>
+    <a href="/guestInApartment" id="guestInApartment">Zameldowani Goście</a>
+    <a href="/main" id="main">Powrót!!!</a>
 </div>
 
-<div id="finderGuest" th:fragment="finderGuest">
-    <form method="POST" action="/find">
-        <input type="text" placeholder="Szukaj">
-        <input type="submit" value="Szukaj">
-    </form>
+<div id="menu" th:fragment="menuMain">
+
+    <a href="/allApartments" id="allApartments">Apartamenty</a>
+
+    <a href="/listGuest" id="listGuest">Gości</a>
+
+    <a href="/invoice" id="invoice">Wystaw Fakture</a>
 </div>
 
-<div id="finderApart" th:fragment="finderApart">
-    <form method="POST" action="/find">
-        <input type="text" placeholder="Szukaj">
-        <input type="submit" value="Szukaj">
-    </form>
-</div>
 
 
 </body>

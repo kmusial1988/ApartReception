@@ -1,5 +1,6 @@
 package ApartReception;
 
+import ApartReception.session.SessionObject;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,6 +13,10 @@ public class AppConfiguration {
     public SessionFactory sessionFactory() {
         return new org.hibernate.cfg.Configuration()
                 .configure().buildSessionFactory();
+    }
+    @Bean
+    public SessionObject sessionObject() {
+        return new SessionObject();
     }
 
 }

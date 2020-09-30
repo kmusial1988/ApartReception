@@ -1,4 +1,5 @@
 ApartReception/controllers/CommonController.class
+ApartReception/session/SessionObject.class
 ApartReception/service/impl/UserServiceImpl.class
 ApartReception/model/Guest.class
 ApartReception/model/User.class
