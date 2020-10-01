@@ -1,12 +1,15 @@
 package ApartReception.service.impl;
 
 import ApartReception.DAO.IGuestDAO;
+import ApartReception.model.Address;
+import ApartReception.model.Apartment;
 import ApartReception.model.Guest;
 import ApartReception.service.IGuestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+
 @Service
 public class GuestServiceImpl implements IGuestService {
 
@@ -25,8 +28,18 @@ public class GuestServiceImpl implements IGuestService {
 
     @Override
     public List<Guest> getGuestByNamePattern(String pattern) {
-        return this.guestDAO.getGuestByNamePattern(pattern);
+        Set<Guest> result = new HashSet<Guest>();
+        List<Guest> guests =  this.guestDAO.getGuestByNamePattern(pattern);
+        result.addAll(guests);
+        List<Guest> guests1 = this.guestDAO.getGuestBySurnamePattern(pattern);
+        result.addAll(guests1);
+        List<Guest>guests2 = this.guestDAO.getGuestByPassNumberPattern(pattern);
+        result.addAll(guests2);
+
+
+        return new ArrayList<>(result);
     }
+
 
     @Override
     public List<Guest> getGuestBySurnamePattern(String pattern) {
@@ -43,3 +56,4 @@ public class GuestServiceImpl implements IGuestService {
         return this.guestDAO.getGuestByStatusRegisterPattern(pattern);
     }
 }
+

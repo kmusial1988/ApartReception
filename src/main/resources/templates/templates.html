@@ -19,43 +19,21 @@
     </th:block>
 </div>
 
-<div id="finder" th:fragment="finderGuestNameSurname">
-    <form method="POST" action="/findGuestNameSurname">
-        <input type="text" placeholder="Name/Surname" name="patternNameSurname">
-        <input type="text" placeholder="passportNumber" name="patternPassportNumber">
+<div id="finder" th:fragment="finderGuest">
+    <form method="POST" action="/findGuest">
+        <input type="text" placeholder="Name/Surname/passNumber" name="patternNameSurname">
         <input type="submit" value="Szukaj">
     </form>
 </div>
 
-<!--
-<div id="finder" th:fragment="finderGuestPassportNumber">
-    <form method="POST" action="/findGuestPassportNumber">
-        <input type="text" placeholder="passportNumber" name="patternPassportNumber">
-        <input type="submit" value="Szukaj">
-    </form>
-</div>
--->
-
-<!--<select name="score" id="score" th:field="*{score}" style="
-    padding-left: 10px;
-    padding-right: 10px;
-    border-left-width: 1px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 20px;
-">
-    <option value="YES">YES</option>
-    <option value="NO">NO</option>
-</select>-->
 
 <div id="finder" th:fragment="finderApart">
     <form method="POST" action="/findApart">
-        <input type="text" placeholder="readyToRent" name="patternRent">
         <input type="text" placeholder="number" name="patternNumber">
-        <input type="text" placeholder="priceForDay" name="patternPriceForDay">
+        <!--<input type="text" placeholder="priceForDay" name="patternPriceForDay">
         <input type="text" placeholder="bedCount" name="patternBedCount">
         <input type="text" placeholder="roomCount" name="patternRoomCount">
-        <input type="text" placeholder="address" name="patternAddress">
+        <input type="text" placeholder="address" name="patternAddress">-->
         <input type="submit" value="Szukaj" >
     </form>
 </div>

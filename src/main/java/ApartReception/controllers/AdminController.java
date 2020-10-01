@@ -47,9 +47,9 @@ public class AdminController {
         apartment1.setRoomCount("2");
 
         Address address1 =new Address();
-        address1.setStreets("Jana");
+        address1.setStreets("Marka");
         address1.setNumber(11);
-        address1.setCity("Kraków");
+        address1.setCity("Warszawa");
         apartment1.setAddress(address1);
 
         Apartment apartment2 = new Apartment();
@@ -60,7 +60,7 @@ public class AdminController {
         apartment2.setRoomCount("2");
 
         Address address2 =new Address();
-        address2.setStreets("Jana");
+        address2.setStreets("Szewska");
         address2.setNumber(22);
         address2.setCity("Kraków");
         apartment2.setAddress(address2);
@@ -74,9 +74,9 @@ public class AdminController {
         apartment3.setRoomCount("2");
 
         Address address3 =new Address();
-        address3.setStreets("Jana");
+        address3.setStreets("Grodzka");
         address3.setNumber(33);
-        address3.setCity("Kraków");
+        address3.setCity("Wroclaw");
         apartment3.setAddress(address3);
 
 
@@ -88,10 +88,10 @@ public class AdminController {
         apartment4.setRoomCount("2");
 
         Address address4 =new Address();
-        address4.setStreets("Jana");
+        address4.setStreets("Grodzka");
         address4.setNumber(44);
-        address4.setCity("Kraków");
-        apartment4.setAddress(address4);
+        address4.setCity("Warszawa");
+        apartment4.setAddress(address3);
 
 
         Apartment apartment5 = new Apartment();
@@ -102,7 +102,7 @@ public class AdminController {
         apartment5.setRoomCount("2");
 
         Address address5 =new Address();
-        address5.setStreets("Jana");
+        address5.setStreets("Golembia");
         address5.setNumber(55);
         address5.setCity("Kraków");
         apartment5.setAddress(address5);
@@ -115,10 +115,10 @@ public class AdminController {
         apartment6.setRoomCount("2");
 
         Address address6 =new Address();
-        address6.setStreets("Jana");
+        address6.setStreets("Bracka");
         address6.setNumber(66);
-        address6.setCity("Kraków");
-        apartment6.setAddress(address6);
+        address6.setCity("Warszawa");
+        apartment6.setAddress(address5);
 
         this.apartmentService.addApartment(apartment1);
         this.apartmentService.addApartment(apartment2);

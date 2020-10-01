@@ -3,11 +3,12 @@ package ApartReception.service.impl;
 import ApartReception.DAO.IApartmentDAO;
 import ApartReception.model.Address;
 import ApartReception.model.Apartment;
+import ApartReception.model.Guest;
 import ApartReception.service.IApartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ApartmentServiceImpl implements IApartmentService {
@@ -29,8 +30,11 @@ public class ApartmentServiceImpl implements IApartmentService {
 
     @Override
     public List<Apartment> getApartByNumberPattern(String pattern) {
-        List<Apartment> result =  this.apartmentDAO.getApartByNumberPattern(pattern);
+        Set<Apartment> result = new HashSet<Apartment>();
+        List<Apartment> apartments =  this.apartmentDAO.getApartByNumberPattern(pattern);
+        result.addAll(apartments);
         List<Address> addresses = this.apartmentDAO.getApartByAddressPattern(pattern);
+        apartments.sort(Comparator.comparing(Apartment::getNumber));
 
         for(Address address : addresses) {
             List<Apartment> apartmentsForAddress =
@@ -39,6 +43,6 @@ public class ApartmentServiceImpl implements IApartmentService {
             result.addAll(apartmentsForAddress);
         }
 
-        return result;
+        return new ArrayList<>(result);
     }
 }

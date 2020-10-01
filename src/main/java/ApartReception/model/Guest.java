@@ -103,4 +103,18 @@ public class Guest {
         YES,
         NO
     }
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Guest) {
+            Guest b = (Guest) o;
+            return b.id == this.id;
+
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
+    }
 }

@@ -10,8 +10,8 @@ public class Apartment {
     @Enumerated(EnumType.STRING)
     private ReadyToRent readyToRent;
     @Column(nullable = false, unique = true)
-    private String  number;
-    @Column(nullable = false )
+    private String number;
+    @Column(nullable = false)
     private Integer priceForDay;
     @Column(nullable = false)
     private String bedCount;
@@ -19,6 +19,7 @@ public class Apartment {
     private String roomCount;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Address address;
+
     @Column(nullable = false)
     /*private String freeData;*/
 
@@ -96,13 +97,27 @@ public class Apartment {
                 ", bedCount='" + bedCount + '\'' +
                 ", roomCount='" + roomCount + '\'' +
                 ", address=" + address +
-               /* ", freeData='" + freeData + '\'' +*/
+                /* ", freeData='" + freeData + '\'' +*/
                 '}';
     }
 
-    public enum ReadyToRent{
+    public enum ReadyToRent {
         YES,
         NO
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Apartment) {
+            Apartment b = (Apartment) o;
+            return b.id == this.id;
+
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.id;
+    }
 }

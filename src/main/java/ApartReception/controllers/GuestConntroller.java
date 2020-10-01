@@ -36,10 +36,11 @@ public class GuestConntroller {
 
 
     @RequestMapping(value = "/findGuest", method = RequestMethod.POST)
-    public String findGuestByName(Model model,@RequestParam String patternName) {
+    public String findGuestByName(Model model,@RequestParam String patternNameSurname) {
         model.addAttribute("isLogged", (sessionObject.getUser() != null));
-        List<Guest> guests1 = this.guestService.getGuestByNamePattern(patternName);
-        model.addAttribute("guests", guests1);
+        List<Guest> guests = this.guestService.getGuestByNamePattern(patternNameSurname);
+        model.addAttribute("guests", guests);
+        guests.sort(Comparator.comparing(Guest::getSurname));
 
         return "allGuest";
     }

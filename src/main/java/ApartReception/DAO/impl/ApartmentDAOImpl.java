@@ -62,9 +62,9 @@ public class ApartmentDAOImpl implements IApartmentDAO {
         Session session = this.sessionFactory.openSession();
         org.hibernate.query.Query<Address> query = session
                 .createQuery
-                        ("FROM ApartReception.model.Address WHERE streets like :streets OR streets like :streets");
+                        ("FROM ApartReception.model.Address WHERE streets like :streets OR city like :city");
         query.setParameter("streets", "%" + pattern + "%");
-        query.setParameter("streets", "%" + pattern + "%");
+        query.setParameter("city", "%" + pattern + "%");
         List<Address> result = query.getResultList();
         session.close();
         return result;
