@@ -7,10 +7,11 @@ import ApartReception.model.Guest;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.management.Query;
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Repository
@@ -80,5 +81,20 @@ public class ApartmentDAOImpl implements IApartmentDAO {
         session.close();
 
         return result;
+    }
+
+    @Override
+    public List<Apartment> getApartByCategory(Apartment.ReadyToRent readyToRent) {
+        try {
+            Session session = sessionFactory.openSession();
+            Query<Apartment> query = session
+                    .createQuery("FROM ApartReception.model.Apartment WHERE readyToRent = :readyToRent");
+            query.setParameter("readyToRent", readyToRent);
+            List<Apartment> result = query.getResultList();
+            session.close();
+            return result;
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 }

@@ -12,4 +12,5 @@ public interface IGuestService {
     List<Guest> getGuestBySurnamePattern(String pattern);
     List<Guest> getGuestByPassNumberPattern(String pattern);
     List<Guest> getGuestByStatusRegisterPattern(String pattern);
+    List<Guest> getGuestByCategory(Guest.GuestRegister guestRegister);
 }

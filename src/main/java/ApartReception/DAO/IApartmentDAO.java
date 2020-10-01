@@ -14,4 +14,5 @@ public interface IApartmentDAO {
 
     List<Address> getApartByAddressPattern(String pattern);
     List<Apartment> getApartByAddressId(int id);
+    List<Apartment> getApartByCategory(Apartment.ReadyToRent readyToRent);
 }

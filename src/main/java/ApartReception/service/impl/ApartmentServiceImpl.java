@@ -45,4 +45,9 @@ public class ApartmentServiceImpl implements IApartmentService {
 
         return new ArrayList<>(result);
     }
+
+    @Override
+    public List<Apartment> getApartByCategory(Apartment.ReadyToRent readyToRent) {
+        return this.apartmentDAO.getApartByCategory(readyToRent);
+    }
 }

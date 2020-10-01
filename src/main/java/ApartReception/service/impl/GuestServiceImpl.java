@@ -55,5 +55,10 @@ public class GuestServiceImpl implements IGuestService {
     public List<Guest> getGuestByStatusRegisterPattern(String pattern) {
         return this.guestDAO.getGuestByStatusRegisterPattern(pattern);
     }
+
+    @Override
+    public List<Guest> getGuestByCategory(Guest.GuestRegister guestRegister) {
+        return this.guestDAO.getGuestByCategory(guestRegister);
+    }
 }
 

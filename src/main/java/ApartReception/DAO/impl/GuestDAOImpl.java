@@ -6,6 +6,7 @@ import ApartReception.model.Guest;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -85,6 +86,17 @@ public class GuestDAOImpl implements IGuestDAO {
         org.hibernate.query.Query<Guest> query = session
                 .createQuery("FROM ApartReception.model.Guest WHERE guestRegister like :guestRegister");
         query.setParameter("guestRegister", "%" + pattern + "%");
+        List<Guest> result = query.getResultList();
+        session.close();
+        return result;
+    }
+
+    @Override
+    public List<Guest> getGuestByCategory(Guest.GuestRegister guestRegister) {
+        Session session = this.sessionFactory.openSession();
+        Query<Guest> query = session
+                .createQuery("FROM ApartReception.model.Guest WHERE guestRegister = :guestRegister");
+        query.setParameter("guestRegister", guestRegister);
         List<Guest> result = query.getResultList();
         session.close();
         return result;

@@ -39,5 +39,24 @@ public class ApartmentController {
 
         return "allApartments";
     }
+    @RequestMapping(value = "/busyApartments", method = RequestMethod.GET)
+    public String busyApartmentsList(Model model) {
+        model.addAttribute("isLogged", (sessionObject.getUser() != null));
+        List<Apartment> apartments =
+                this.apartmentService.getApartByCategory(Apartment.ReadyToRent.NO);
+        model.addAttribute("apartments", apartments);
+        return "allApartments";
+
+    }
+
+    @RequestMapping(value = "/freeApartments", method = RequestMethod.GET)
+    public String freeApartmentsList(Model model) {
+        model.addAttribute("isLogged", (sessionObject.getUser() != null));
+        List<Apartment> apartments =
+                this.apartmentService.getApartByCategory(Apartment.ReadyToRent.YES);
+        model.addAttribute("apartments", apartments);
+        return "allApartments";
+
+    }
 
 }

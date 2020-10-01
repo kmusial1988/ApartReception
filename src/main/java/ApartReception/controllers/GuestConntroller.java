@@ -44,29 +44,23 @@ public class GuestConntroller {
 
         return "allGuest";
     }
-
-   /* @RequestMapping(value = "/findGuest", method = RequestMethod.POST)
-    public String findGuestBySurname(Model model, @RequestParam String patternSurname){
-        model.addAttribute("isLogged",(sessionObject.getUser() != null));
-        List<Guest> guests = this.guestService.getGuestBySurnamePattern(patternSurname);
+    @RequestMapping(value = "/guestInApartment", method = RequestMethod.GET)
+    public String guestInApartmentLst(Model model) {
+        model.addAttribute("isLogged", (sessionObject.getUser() != null));
+        List<Guest> guests = this.guestService
+                .getGuestByCategory(Guest.GuestRegister.YES);
         model.addAttribute("guests", guests);
-
         return "allGuest";
+
     }
-    @RequestMapping(value = "/findGuest", method = RequestMethod.POST)
-    public String findGuestByPassportNumber(Model model, @RequestParam String patternPassportNumber){
-        model.addAttribute("isLogged",(sessionObject.getUser() != null));
-        List<Guest> guests = this.guestService.getGuestByPassNumberPattern(patternPassportNumber);
+    @RequestMapping(value = "/guestWaitToRegister", method = RequestMethod.GET)
+    public String guestWaitToRegisterList(Model model) {
+        model.addAttribute("isLogged", (sessionObject.getUser() != null));
+        List<Guest> guests = this.guestService
+                .getGuestByCategory(Guest.GuestRegister.NO);
         model.addAttribute("guests", guests);
-
         return "allGuest";
+
     }
-    @RequestMapping(value = "/findGuest", method = RequestMethod.POST)
-    public String findGuestByStatusRegister(Model model, @RequestParam String patternGuestStatus){
-        model.addAttribute("isLogged",(sessionObject.getUser() != null));
-        List<Guest> guests = this.guestService.getGuestByStatusRegisterPattern(patternGuestStatus);
-        model.addAttribute("guests", guests);
 
-        return "allGuest";
-    }*/
 }
