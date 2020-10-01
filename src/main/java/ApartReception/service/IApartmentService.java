@@ -7,4 +7,5 @@ import java.util.List;
 public interface IApartmentService {
     void addApartment(Apartment apartment);
     List<Apartment> getAllApart();
+    List<Apartment> getApartByNumberPattern(String pattern);
 }

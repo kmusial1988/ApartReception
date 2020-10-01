@@ -1,0 +1,156 @@
+#body {
+   background-color: #e6e8e7;
+}
+
+#logo {
+    position: absolute;
+    top: -45px;
+    left: 1px;
+    width: 50%;
+    height: 50%;
+    background-image: url("logo.png");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+
+}
+
+#user-menu {
+    position: absolute;
+    top: 30px;
+    right: 53px;
+    width: 40%;
+    height: 150px;
+
+}
+
+#login-button {
+    display: inline-block;
+    height: 150px;
+    width: 40%;
+    background-image: url("login-button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+
+}
+
+#logout-button {
+    display: inline-block;
+    height: 150px;
+    width: 40%;
+    background-image: url("logout-button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: right;
+}
+
+#finder {
+    position: absolute;
+    top: 180px;
+    left: 31%;
+    right: 10px;
+    width: 39%;
+    height: 116px;
+    background-color: #e6e8e7;
+}
+
+#finder form {
+    width: 100%;
+    text-align: center;
+}
+#finder form input{
+    text-align: center;
+}
+
+#menu {
+    position: absolute;
+    top: 380px;
+    left: 5%;
+    width: 91.5%;
+    height: 100px;
+    text-align: center;
+    border-top: solid 5px black;
+    background-color: #b2b2b2;
+
+
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    width: 220px;
+    padding-top: 30px;
+    display: inline-block;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    transition-duration: 1s;
+    transition-property: all;
+      font-size: 17px;
+}
+
+
+
+#menu a:hover {
+    background: #525151;
+    color: white;
+}
+
+
+#content {
+    position: absolute;
+    top: 500px;
+    left: 5%;
+    width: 91%;
+    height: 100%;
+
+    border-top: solid 3px black;
+
+}
+
+
+.label {
+    width: 30%;
+    display: inline-block;
+}
+.value {
+    width: 69%;
+    display: inline-block;
+}
+
+.guest {
+    border: solid 1px black;
+    margin: 8px;
+    padding: 8px;
+}
+.guest > div {
+    width: 100%;
+
+}
+
+/*
+
+.address-streets {
+    margin-left: 10px;
+}
+.address-number {
+    margin-left: 10px;
+}
+.address-city {
+    margin-left: 10px;
+}
+*/
+
+/*
+.author-surname {
+    display: inline-block;
+    margin-left: 10px;
+    }
+*/
+
+
+
+
+
+
+

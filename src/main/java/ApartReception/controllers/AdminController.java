@@ -2,8 +2,10 @@ package ApartReception.controllers;
 
 import ApartReception.model.Address;
 import ApartReception.model.Apartment;
+import ApartReception.model.Guest;
 import ApartReception.model.User;
 import ApartReception.service.IApartmentService;
+import ApartReception.service.IGuestService;
 import ApartReception.service.IUserService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class AdminController {
 
     @Autowired
     IApartmentService apartmentService;
+
+    @Autowired
+    IGuestService guestService;
 
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public String addUser() {
@@ -124,6 +129,92 @@ public class AdminController {
 
         return "redirect:/main";
 
+    }
+    @RequestMapping(value = "/adminAddGuest", method = RequestMethod.GET)
+    public String adminAddGuest(){
+        Guest guest1 = new Guest();
+        guest1.setGuestRegister(Guest.GuestRegister.NO);
+        guest1.setName("Kamil");
+        guest1.setSurname("Kamil");
+        guest1.setPassportNumber("12435");
+        guest1.setStartVisit("12.12.2020");
+        guest1.setEndVisit("14.12.2020");
+        guest1.setVisitDayCount(2);
+
+        Guest guest2 = new Guest();
+        guest2.setGuestRegister(Guest.GuestRegister.NO);
+        guest2.setName("Eliza");
+        guest2.setSurname("Eliza");
+        guest2.setPassportNumber("4578765");
+        guest2.setStartVisit("123");
+        guest2.setEndVisit("123");
+        guest2.setVisitDayCount(2);
+
+        Guest guest3 = new Guest();
+        guest3.setGuestRegister(Guest.GuestRegister.NO);
+        guest3.setName("Mateusz");
+        guest3.setSurname("Mateusz");
+        guest3.setPassportNumber("4567");
+        guest3.setStartVisit("134");
+        guest3.setEndVisit("13456");
+        guest3.setVisitDayCount(2);
+
+        Guest guest4 = new Guest();
+        guest4.setGuestRegister(Guest.GuestRegister.NO);
+        guest4.setName("Karol");
+        guest4.setSurname("Karol");
+        guest4.setPassportNumber("456723");
+        guest4.setStartVisit("1234");
+        guest4.setEndVisit("234");
+        guest4.setVisitDayCount(5);
+
+        Guest guest5 = new Guest();
+        guest5.setGuestRegister(Guest.GuestRegister.YES);
+        guest5.setName("Ewelina");
+        guest5.setSurname("Ewelina");
+        guest5.setPassportNumber("6934");
+        guest5.setStartVisit("234");
+        guest5.setEndVisit("345");
+        guest5.setVisitDayCount(3);
+
+        Guest guest6 = new Guest();
+        guest6.setGuestRegister(Guest.GuestRegister.YES);
+        guest6.setName("Marcin");
+        guest6.setSurname("Marcin");
+        guest6.setPassportNumber("43769");
+        guest6.setStartVisit("02937");
+        guest6.setEndVisit("3724");
+        guest6.setVisitDayCount(4);
+
+        Guest guest7 = new Guest();
+        guest7.setGuestRegister(Guest.GuestRegister.YES);
+        guest7.setName("Kiha");
+        guest7.setSurname("Kiha");
+        guest7.setPassportNumber("678432");
+        guest7.setStartVisit("932749");
+        guest7.setEndVisit("2389640");
+        guest7.setVisitDayCount(3);
+
+        Guest guest8 = new Guest();
+        guest8.setGuestRegister(Guest.GuestRegister.YES);
+        guest8.setName("Magda");
+        guest8.setSurname("Magda");
+        guest8.setPassportNumber("82635");
+        guest8.setStartVisit("324");
+        guest8.setEndVisit("321");
+        guest8.setVisitDayCount(6);
+
+        this.guestService.addGuest(guest1);
+        this.guestService.addGuest(guest2);
+        this.guestService.addGuest(guest3);
+        this.guestService.addGuest(guest4);
+        this.guestService.addGuest(guest5);
+        this.guestService.addGuest(guest6);
+        this.guestService.addGuest(guest7);
+        this.guestService.addGuest(guest8);
+
+
+        return "redirect:/main";
     }
 
 }

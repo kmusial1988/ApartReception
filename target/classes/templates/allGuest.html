@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Apartamenty-Krakowskie</title>
+    <link rel="stylesheet" type="text/css" href="/allGuest.css">
+</head>
+<body style="background-color: #e6e8e7;">
+
+
+
+
+<div th:replace="templates.html :: logo"></div>
+<div th:replace="templates.html :: userMenu"></div>
+<div th:replace="templates.html :: finderGuestNameSurname"></div>
+<div th:replace="templates.html :: menuAllGuest"></div>
+
+
+<div id="content">
+    <th:block th:each="currentGuest : ${guests}">
+
+        <div class="guest">
+            <div class="guestRegister">
+                <div class="label">guestRegister :</div>
+                <div class="value" th:text="${currentGuest.guestRegister}"></div>
+            </div>
+            <div class="name">
+                <div class="label">name :</div>
+                <div class="value" th:text="${currentGuest.name}"></div>
+            </div>
+            <div class="surname">
+                <div class="label">surname :</div>
+                <div class="value" th:text="${currentGuest.surname}"></div>
+            </div>
+            <div class="passportNumber">
+                <div class="label">passportNumber :</div>
+                <div class="value" th:text="${currentGuest.passportNumber}"></div>
+            </div>
+            <div class="startVisit">
+                <div class="label">startVisit :</div>
+                <div class="value" th:text="${currentGuest.startVisit}"></div>
+            </div>
+            <div class="endVisit">
+                <div class="label">endVisit :</div>
+                <div class="value" th:text="${currentGuest.endVisit}"></div>
+            </div>
+            <div class="visitDayCount">
+                <div class="label">visitDayCount :</div>
+                <div class="value" th:text="${currentGuest.visitDayCount}"></div>
+            </div>
+            <!--<div class="address">
+                <div class="label">Address :</div>
+                <div class="value">
+                    <div class="address-streets" th:text="${currentApartments.address.streets}"></div>
+                    <div class="address-number" th:text="${currentApartments.address.number}"></div>
+                    <div class="address-city" th:text="${currentApartments.address.city}"></div>
+                </div>
+            </div>-->
+        </div>
+    </th:block>
+
+
+</div>
+
+</body>
+</html>
